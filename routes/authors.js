@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
     }
 })
 
+// Show Author Route
 router.get('/:id', async (req, res) => {
     try {
         const author = await Author.findById(req.params.id)
@@ -54,6 +55,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+// Edit Author Route
 router.get('/:id/edit', async (req, res) => {
     const author = await Author.findById(req.params.id)
     try {
@@ -63,6 +65,7 @@ router.get('/:id/edit', async (req, res) => {
     }
 })
 
+// Update Author Route
 router.put('/:id', async (req, res) => {
     let author 
     try {
@@ -82,10 +85,7 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-router.get('/:id', (req, res) => {
-    res.send('Show Author ' + req.params.id)
-})
-
+// Delete Author Route
 router.delete('/:id', async (req, res) => {
     let author 
     try {
